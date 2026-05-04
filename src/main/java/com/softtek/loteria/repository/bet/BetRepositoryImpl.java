@@ -1,11 +1,7 @@
 package com.softtek.loteria.repository.bet;
 
 import org.springframework.stereotype.Repository;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
@@ -15,13 +11,13 @@ public class BetRepositoryImpl implements BetRepository {
 
     @Override
     public void saveBet(String userDni, List<Integer> bet) {
-        if (userDni == null || userDni.isBlank()) {
-            throw new IllegalArgumentException("El DNI del usuario no puede ser nulo o vacío");
+        if (userDni == null || userDni.isBlank() || bet == null || bet.isEmpty()) {
+            throw new IllegalArgumentException("Datos inválidos");
         }
-        if (bet == null || bet.isEmpty()) {
-            throw new IllegalArgumentException("La apuesta no puede ser nula o vacía");
 
-        }
+        List<Integer> betCopy = new ArrayList<>(bet);
+        betsStorage.computeIfAbsent(userDni, k -> Collections.synchronizedList(new ArrayList<>()))
+                .add(betCopy);
     }
 
     @Override
@@ -29,25 +25,25 @@ public class BetRepositoryImpl implements BetRepository {
         if (userDni == null || userDni.isBlank()) {
             return Collections.emptyList();
         }
+
         List<List<Integer>> bets = betsStorage.get(userDni);
         if (bets == null) {
             return Collections.emptyList();
         }
 
-
         return Collections.unmodifiableList(
-            bets.stream()
-                    .map(ArrayList::new)
-                    .toList());
+                bets.stream()
+                        .map(ArrayList::new)
+                        .toList()
+        );
     }
 
     @Override
     public boolean hasBets(String userDni) {
-        if(userDni == null || userDni.isBlank()) {
+        if (userDni == null || userDni.isBlank()) {
             return false;
         }
         List<List<Integer>> bets = betsStorage.get(userDni);
         return bets != null && !bets.isEmpty();
     }
-
 }

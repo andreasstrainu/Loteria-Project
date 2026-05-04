@@ -12,6 +12,4 @@ public interface UsersController {
     User getUserByDni(String dni);
 
     List<User> getUsers();
-
-    ResponseEntity<Void> registerBet(String dni, Bet bet);
 }

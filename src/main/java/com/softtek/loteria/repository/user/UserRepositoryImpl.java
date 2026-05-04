@@ -13,21 +13,21 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void save(User user) {
-        if (user == null || user.getId() == null) {
-            throw new IllegalArgumentException("El usuario y el id no pueden ser nulos");
+        if (user == null || user.getDni() == null) {
+            throw new IllegalArgumentException("El usuario y el DNI no pueden ser nulos");
         }
-        if (usersStorage.containsKey(user.getId())) {
-            throw new IllegalArgumentException("El usuario con el id " + user.getId() + " ya existe");
+        if (usersStorage.containsKey(user.getDni())) {
+            throw new IllegalArgumentException("El usuario con el DNI " + user.getDni() + " ya existe");
         }
 
     }
 
     @Override
-    public Optional<User> findById(String id) {
-        if (id == null || id.isBlank()) {
+    public Optional<User> findByDni(String dni) {
+        if (dni == null || dni.isBlank()) {
             return Optional.empty();
         }
-        return Optional.ofNullable(usersStorage.get(id));
+        return Optional.ofNullable(usersStorage.get(dni));
     }
 
     @Override
@@ -36,19 +36,19 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public boolean existsById(String id) {
-        return id != null && !id.isBlank() && usersStorage.containsKey(id);
+    public boolean existsByDni(String dni) {
+        return dni != null && !dni.isBlank() && usersStorage.containsKey(dni);
     }
 
     @Override
     public void update(User user) {
-        if (user == null || user.getId() == null) {
-            throw new IllegalArgumentException("El usuario y el id no pueden ser nulos");
+        if (user == null || user.getDni() == null) {
+            throw new IllegalArgumentException("El usuario y el DNI no pueden ser nulos");
         }
-        if (!usersStorage.containsKey(user.getId())) {
-            throw new IllegalArgumentException("El usuario con el id " + user.getId() + " no existe");
+        if (!usersStorage.containsKey(user.getDni())) {
+            throw new IllegalArgumentException("El usuario con el DNI " + user.getDni() + " no existe");
         }
-        usersStorage.put(user.getId(), user);
+        usersStorage.put(user.getDni(), user);
 
     }
 }

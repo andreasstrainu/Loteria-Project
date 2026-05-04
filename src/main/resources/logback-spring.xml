@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <Property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%t] %c{2} - %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+
+        <!-- Consola -->
+        <Console name="CONSOLE">
+            <PatternLayout pattern="${PATTERN}"/>
+        </Console>
+
+        <!-- Log principal -->
+        <RollingFile name="APP_FILE"
+                     fileName="logs/application.log"
+                     filePattern="logs/application-%d{yyyy-MM-dd}.log.gz">
+
+            <PatternLayout pattern="${PATTERN}"/>
+
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+
+        </RollingFile>
+
+        <!-- Log de auditoría -->
+        <RollingFile name="AUDIT_FILE"
+                     fileName="logs/audit.log"
+                     filePattern="logs/audit-%d{yyyy-MM-dd}.log.gz">
+
+            <PatternLayout pattern="${PATTERN}"/>
+
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+
+        <!-- Logger de la aplicación -->
+        <Logger name="com.loteria" level="DEBUG" additivity="false">
+            <AppenderRef ref="CONSOLE"/>
+            <AppenderRef ref="APP_FILE"/>
+        </Logger>
+
+        <!-- Logger de auditoría (AOP) -->
+        <Logger name="AUDIT" level="INFO" additivity="false">
+            <AppenderRef ref="AUDIT_FILE"/>
+        </Logger>
+
+        <!-- ROOT -->
+        <Root level="INFO">
+            <AppenderRef ref="CONSOLE"/>
+            <AppenderRef ref="APP_FILE"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>

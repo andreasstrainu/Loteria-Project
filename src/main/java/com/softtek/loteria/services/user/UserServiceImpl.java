@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserService
+public class UserServiceImpl
 {
 
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     private final UserRepository userRepository;
 
-    public UserService(UserRepository userRepository)
+    public UserServiceImpl(UserRepository userRepository)
     {
         this.userRepository = userRepository;
     }

@@ -1,6 +1,13 @@
 package com.softtek.loteria.controllers.users;
 
-import java.net.URI;
+import com.softtek.loteria.model.Bet;
+import com.softtek.loteria.model.User;
+import com.softtek.loteria.services.user.UserService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -16,19 +23,18 @@ public class UsersControllerImpl implements UsersController {
 
     @Override
     @PutMapping("/register/{dni}")
-    public ResponseEntity<Void> registerUser(@PathVariable String dni, @RequestBody User user) {
-        user.setDni(dni);
-        Optional<User> registerUser = userService.registerUser(user);
+    public ResponseEntity<Void> registerUser(@PathVariable String dni, @RequestBody String name) {
+        Optional<User> registerUser = Optional.ofNullable(userService.createUser(dni, name));
 
         if (registerUser.isEmpty()) {
-            userService.registerUser(user);
+            userService.createUser(dni, name);
             return ResponseEntity.
-                    created(URI.create("/restaurante/locales/" + user.getDni())). //TODO Cambiar ruta
+                    created(). //TODO Cambiar ruta
                             build();
         } else {
             return ResponseEntity.
                     noContent().
-                    header("Content-Location", "/restaurante/locales/" + user.getDni()).   //TODO Cambiar ruta
+                    header().   //TODO Cambiar ruta
                             build();
         }
     }
@@ -36,20 +42,19 @@ public class UsersControllerImpl implements UsersController {
     @Override
     @GetMapping("/{dni}")
     public User getUserByDni(String dni) {
-        Optional<User> user = userService.getUser(Integer.parseInt(dni));
+        Optional<User> user = Optional.ofNullable(userService.getUserById(dni));
 
         if (user.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User no encontrado");
         } else {
             return user.get();
         }
-        return null;
     }
 
     @Override
     @GetMapping("")
     public List<User> getUsers() {
-        return userService.getAll();
+        return userService.getAllUsers();
     }
 
     @Override

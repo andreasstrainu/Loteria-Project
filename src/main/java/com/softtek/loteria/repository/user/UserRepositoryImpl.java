@@ -30,7 +30,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public List<User> findAll() {
-        return Collections.unmodifiableList(new ArrayList<>(usersStorage.values()));
+        return List.copyOf(usersStorage.values());
     }
 
     @Override

@@ -1,8 +1,6 @@
-package com.loteria.services;
-
-import com.loteria.models.User;
-import com.loteria.repositories.UserRepository;
-import com.softtek.loteria.services.bet.BetService;
+package com.softtek.loteria.services.bet;
+import com.softtek.loteria.model.User;
+import com.softtek.loteria.repository.user.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -23,8 +21,8 @@ public class BetServiceImpl {
         this.userRepository = userRepository;
     }
 
-    public void addBet(String userId, List<Integer> numbers) {
-        User user = userRepository.findById(userId)
+    public void addBet(String userDni, List<Integer> numbers) {
+        User user = userRepository.findByDni(userDni)
                 .orElseThrow(() -> {
                     logger.error("Usuario no encontrado");
                     return new RuntimeException("User not found");
@@ -39,7 +37,7 @@ public class BetServiceImpl {
         user.getBets().add(numbers);
 
         logger.info("Apuesta añadida");
-        logger.debug("Apuesta: {} para usuario {}", numbers, userId);
+        logger.debug("Apuesta: {} para usuario {}", numbers, userDni);
     }
 
     private void validateBet(List<Integer> numbers)

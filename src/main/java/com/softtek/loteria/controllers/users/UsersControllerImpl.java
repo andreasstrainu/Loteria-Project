@@ -56,13 +56,4 @@ public class UsersControllerImpl implements UsersController {
     public List<User> getUsers() {
         return userService.getAllUsers();
     }
-
-    @Override
-    @PutMapping("{dni}/bets")
-    public ResponseEntity<Void> registerBet(@PathVariable String dni, @RequestParam Bet bet) {
-        User user = getUserByDni(dni);
-        Optional<User> registerBet = userService.registerBet(user, bet);
-
-
-    }
 }

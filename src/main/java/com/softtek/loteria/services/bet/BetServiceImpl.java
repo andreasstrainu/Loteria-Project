@@ -1,64 +1,58 @@
 package com.softtek.loteria.services.bet;
-import com.softtek.loteria.model.User;
+
 import com.softtek.loteria.repository.user.UserRepository;
+import com.softtek.loteria.validator.BetValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 @Service
-public class BetServiceImpl {
+public class BetServiceImpl implements BetService {
 
     private static final Logger logger = LoggerFactory.getLogger(BetServiceImpl.class);
 
     private final UserRepository userRepository;
 
-    public BetServiceImpl(UserRepository userRepository)
-    {
+    public BetServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public void addBet(String userDni, List<Integer> numbers) {
-        User user = userRepository.findByDni(userDni)
-                .orElseThrow(() -> {
-                    logger.error("Usuario no encontrado");
-                    return new RuntimeException("User not found");
-                });
-
-        validateBet(numbers);
-
-        if (user.getBets().contains(numbers)) {
-            logger.warn("Usuario repitió apuesta");
+    @Override
+    public void addBet(String userId, Integer[] numbers) {
+        if (userId == null || userId.isBlank()) {
+            logger.error("UserId no puede ser nulo o vacío");
+            throw new IllegalArgumentException("UserId no puede ser nulo o vacío");
         }
 
-        user.getBets().add(numbers);
-
-        logger.info("Apuesta añadida");
-        logger.debug("Apuesta: {} para usuario {}", numbers, userDni);
-    }
-
-    private void validateBet(List<Integer> numbers)
-    {
-        if (numbers.size() != 6) {
-            logger.error("Apuesta inválida: tamaño incorrecto");
-            throw new RuntimeException("Bet must have 6 numbers");
+        if (numbers == null || numbers.length == 0) {
+            logger.error("Los números de la apuesta no pueden ser nulos o vacíos");
+            throw new IllegalArgumentException("Los números de la apuesta no pueden ser nulos o vacíos");
         }
 
-        Set<Integer> set = new HashSet<>(numbers);
+        List<Integer> betNumbers = new ArrayList<>(Arrays.asList(numbers));
 
-        if (set.size() != 6) {
-            logger.error("Apuesta inválida: números repetidos");
-            throw new RuntimeException("Numbers cannot repeat");
+        try {
+            BetValidator.validateBet(betNumbers);
+        } catch (IllegalArgumentException e) {
+            logger.error("Validación de apuesta fallida: {}", e.getMessage());
+            throw e;
         }
 
-        for (int n : numbers) {
-            if (n < 1 || n > 49) {
-                logger.error("Número fuera de rango");
-                throw new RuntimeException("Numbers must be between 1 and 49");
-            }
-        }
+        userRepository.findByDni(userId).ifPresentOrElse(
+                user -> {
+                    user.getBets().add(betNumbers);
+                    userRepository.update(user);
+                    logger.info("Apuesta añadida para usuario: {}", userId);
+                    logger.debug("Apuesta añadida: {}", betNumbers);
+                },
+                () -> {
+                    logger.error("Usuario con DNI {} no encontrado", userId);
+                    throw new RuntimeException("Usuario no encontrado");
+                }
+        );
     }
 }

@@ -2,6 +2,7 @@ package com.softtek.loteria.services.user;
 
 import com.softtek.loteria.model.User;
 import com.softtek.loteria.repository.user.UserRepository;
+import com.softtek.loteria.validator.UserValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,14 @@ public class UserServiceImpl implements UserService {
     }
 
     public User createUser(String dni, String name) {
+        try {
+            UserValidator.validateUserDni(dni);
+            UserValidator.validateUserName(name);
+        } catch (IllegalArgumentException e) {
+            logger.error("Validación de usuario fallida: {}", e.getMessage());
+            throw e;
+        }
+
         if (userRepository.existsByDni(dni)) {
             logger.error("Intento de crear usuario duplicado");
             throw new RuntimeException("User already exists");
@@ -41,6 +50,13 @@ public class UserServiceImpl implements UserService {
     }
 
     public User getUserById(String id) {
+        try {
+            UserValidator.validateUserDni(id);
+        } catch (IllegalArgumentException e) {
+            logger.error("Validación de DNI fallida: {}", e.getMessage());
+            throw e;
+        }
+
         return userRepository.findByDni(id).orElseThrow(() ->
         {
             logger.error("Usuario no encontrado");

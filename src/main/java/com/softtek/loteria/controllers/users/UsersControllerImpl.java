@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -23,7 +24,12 @@ public class UsersControllerImpl implements UsersController {
 
     @Override
     @PutMapping("/register/{dni}")
-    public ResponseEntity<Void> registerUser(@PathVariable String dni, @RequestBody String name) {
+    public ResponseEntity<Void> registerUser(@PathVariable String dni, @RequestBody Map<String, String> request) {
+        String name = request.get("name");
+        if (name == null || name.isBlank()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "El nombre es requerido");
+        }
+
         Optional<User> registerUser = Optional.ofNullable(userService.createUser(dni, name));
 
         if (registerUser.isPresent()) {

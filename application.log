@@ -1,0 +1,201 @@
+2026-05-04 16:24:32 [main] INFO  c.softtek.loteria.LoteriaApplication - Starting LoteriaApplication using Java 25.0.2 with PID 6828 (C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project\target\classes started by aaron.granado in C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project)
+2026-05-04 16:24:32 [main] INFO  c.softtek.loteria.LoteriaApplication - Starting LoteriaApplication using Java 25.0.2 with PID 6828 (C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project\target\classes started by aaron.granado in C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project)
+2026-05-04 16:24:32 [main] DEBUG c.softtek.loteria.LoteriaApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-04 16:24:32 [main] DEBUG c.softtek.loteria.LoteriaApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-04 16:24:32 [main] INFO  c.softtek.loteria.LoteriaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-04 16:24:32 [main] INFO  c.softtek.loteria.LoteriaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-04 16:24:33 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'betsControllerImpl' defined in file [C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project\target\classes\com\softtek\loteria\controllers\bets\BetsControllerImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.softtek.loteria.services.bet.BetService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-05-04 16:24:33 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.softtek.loteria.controllers.bets.BetsControllerImpl required a bean of type 'com.softtek.loteria.services.bet.BetService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.softtek.loteria.services.bet.BetService' in your configuration.
+
+2026-05-04 16:25:24 [main] INFO  c.softtek.loteria.LoteriaApplication - Starting LoteriaApplication using Java 25.0.2 with PID 9360 (C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project\target\classes started by aaron.granado in C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project)
+2026-05-04 16:25:24 [main] INFO  c.softtek.loteria.LoteriaApplication - Starting LoteriaApplication using Java 25.0.2 with PID 9360 (C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project\target\classes started by aaron.granado in C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project)
+2026-05-04 16:25:24 [main] DEBUG c.softtek.loteria.LoteriaApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-04 16:25:24 [main] DEBUG c.softtek.loteria.LoteriaApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-04 16:25:24 [main] INFO  c.softtek.loteria.LoteriaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-04 16:25:24 [main] INFO  c.softtek.loteria.LoteriaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-04 16:25:26 [main] INFO  c.softtek.loteria.LoteriaApplication - Started LoteriaApplication in 1.66 seconds (process running for 2.056)
+2026-05-04 16:25:26 [main] INFO  c.softtek.loteria.LoteriaApplication - Started LoteriaApplication in 1.66 seconds (process running for 2.056)
+2026-05-04 16:26:04 [http-nio-8080-exec-1] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:26:04 [http-nio-8080-exec-1] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:27:11 [http-nio-8080-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported]
+2026-05-04 16:27:13 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' is not supported]
+2026-05-04 16:27:25 [http-nio-8080-exec-2] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:27:25 [http-nio-8080-exec-2] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:27:51 [http-nio-8080-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-05-04 16:27:58 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Void> com.softtek.loteria.controllers.users.UsersControllerImpl.registerUser(java.lang.String,java.lang.String)]
+2026-05-04 16:28:34 [http-nio-8080-exec-4] INFO  c.s.l.services.user.UserServiceImpl - Usuario creado
+2026-05-04 16:28:34 [http-nio-8080-exec-4] INFO  c.s.l.services.user.UserServiceImpl - Usuario creado
+2026-05-04 16:28:34 [http-nio-8080-exec-4] DEBUG c.s.l.services.user.UserServiceImpl - Usuario creado: User(dni=12, name={
+	name:"Alejandro"
+}, bets=[])
+2026-05-04 16:28:34 [http-nio-8080-exec-4] DEBUG c.s.l.services.user.UserServiceImpl - Usuario creado: User(dni=12, name={
+	name:"Alejandro"
+}, bets=[])
+2026-05-04 16:28:46 [http-nio-8080-exec-1] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:28:46 [http-nio-8080-exec-1] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:30:27 [http-nio-8080-exec-3] INFO  c.s.l.services.user.UserServiceImpl - Usuario creado
+2026-05-04 16:30:27 [http-nio-8080-exec-3] INFO  c.s.l.services.user.UserServiceImpl - Usuario creado
+2026-05-04 16:30:27 [http-nio-8080-exec-3] DEBUG c.s.l.services.user.UserServiceImpl - Usuario creado: User(dni=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e, name={
+	Pedro
+}, bets=[])
+2026-05-04 16:30:27 [http-nio-8080-exec-3] DEBUG c.s.l.services.user.UserServiceImpl - Usuario creado: User(dni=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e, name={
+	Pedro
+}, bets=[])
+2026-05-04 16:30:32 [http-nio-8080-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-05-04 16:30:36 [http-nio-8080-exec-9] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:30:36 [http-nio-8080-exec-9] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:31:07 [http-nio-8080-exec-10] INFO  c.s.l.services.user.UserServiceImpl - Usuario creado
+2026-05-04 16:31:07 [http-nio-8080-exec-10] INFO  c.s.l.services.user.UserServiceImpl - Usuario creado
+2026-05-04 16:31:07 [http-nio-8080-exec-10] DEBUG c.s.l.services.user.UserServiceImpl - Usuario creado: User(dni=2, name="Pepe", bets=[])
+2026-05-04 16:31:07 [http-nio-8080-exec-10] DEBUG c.s.l.services.user.UserServiceImpl - Usuario creado: User(dni=2, name="Pepe", bets=[])
+2026-05-04 16:31:14 [http-nio-8080-exec-2] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:31:14 [http-nio-8080-exec-2] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:44:09 [main] INFO  c.softtek.loteria.LoteriaApplication - Starting LoteriaApplication using Java 25.0.2 with PID 17964 (C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project\target\classes started by aaron.granado in C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project)
+2026-05-04 16:44:09 [main] INFO  c.softtek.loteria.LoteriaApplication - Starting LoteriaApplication using Java 25.0.2 with PID 17964 (C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project\target\classes started by aaron.granado in C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project)
+2026-05-04 16:44:09 [main] DEBUG c.softtek.loteria.LoteriaApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-04 16:44:09 [main] DEBUG c.softtek.loteria.LoteriaApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-04 16:44:09 [main] INFO  c.softtek.loteria.LoteriaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-04 16:44:09 [main] INFO  c.softtek.loteria.LoteriaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-04 16:44:11 [main] INFO  c.softtek.loteria.LoteriaApplication - Started LoteriaApplication in 1.653 seconds (process running for 2.109)
+2026-05-04 16:44:11 [main] INFO  c.softtek.loteria.LoteriaApplication - Started LoteriaApplication in 1.653 seconds (process running for 2.109)
+2026-05-04 16:44:16 [http-nio-8080-exec-1] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:44:16 [http-nio-8080-exec-1] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:44:23 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-05-04 16:44:27 [http-nio-8080-exec-8] ERROR c.s.l.services.user.UserServiceImpl - Validación de usuario fallida: El DNI debe tener 8 dígitos seguidos de una letra mayúscula
+2026-05-04 16:44:27 [http-nio-8080-exec-8] ERROR c.s.l.services.user.UserServiceImpl - Validación de usuario fallida: El DNI debe tener 8 dígitos seguidos de una letra mayúscula
+2026-05-04 16:44:27 [http-nio-8080-exec-8] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: El DNI debe tener 8 dígitos seguidos de una letra mayúscula] with root cause
+java.lang.IllegalArgumentException: El DNI debe tener 8 dígitos seguidos de una letra mayúscula
+	at com.softtek.loteria.validator.UserValidator.validateUserDni(UserValidator.java:21)
+	at com.softtek.loteria.services.user.UserServiceImpl.createUser(UserServiceImpl.java:26)
+	at com.softtek.loteria.controllers.users.UsersControllerImpl.registerUser(UsersControllerImpl.java:27)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:650)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-05-04 16:44:44 [http-nio-8080-exec-4] ERROR c.s.l.services.user.UserServiceImpl - Validación de usuario fallida: El DNI debe tener 8 dígitos seguidos de una letra mayúscula
+2026-05-04 16:44:44 [http-nio-8080-exec-4] ERROR c.s.l.services.user.UserServiceImpl - Validación de usuario fallida: El DNI debe tener 8 dígitos seguidos de una letra mayúscula
+2026-05-04 16:44:44 [http-nio-8080-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: El DNI debe tener 8 dígitos seguidos de una letra mayúscula] with root cause
+java.lang.IllegalArgumentException: El DNI debe tener 8 dígitos seguidos de una letra mayúscula
+	at com.softtek.loteria.validator.UserValidator.validateUserDni(UserValidator.java:21)
+	at com.softtek.loteria.services.user.UserServiceImpl.createUser(UserServiceImpl.java:26)
+	at com.softtek.loteria.controllers.users.UsersControllerImpl.registerUser(UsersControllerImpl.java:27)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:650)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2026-05-04 16:45:06 [http-nio-8080-exec-5] INFO  c.s.l.services.user.UserServiceImpl - Usuario creado
+2026-05-04 16:45:06 [http-nio-8080-exec-5] INFO  c.s.l.services.user.UserServiceImpl - Usuario creado
+2026-05-04 16:45:06 [http-nio-8080-exec-5] DEBUG c.s.l.services.user.UserServiceImpl - Usuario creado: User(dni=51014122F, name={
+	name:"Pepe"
+}, bets=[])
+2026-05-04 16:45:06 [http-nio-8080-exec-5] DEBUG c.s.l.services.user.UserServiceImpl - Usuario creado: User(dni=51014122F, name={
+	name:"Pepe"
+}, bets=[])
+2026-05-04 16:45:15 [http-nio-8080-exec-2] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:45:15 [http-nio-8080-exec-2] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:50:12 [main] INFO  c.softtek.loteria.LoteriaApplication - Starting LoteriaApplication using Java 25.0.2 with PID 3344 (C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project\target\classes started by aaron.granado in C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project)
+2026-05-04 16:50:12 [main] INFO  c.softtek.loteria.LoteriaApplication - Starting LoteriaApplication using Java 25.0.2 with PID 3344 (C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project\target\classes started by aaron.granado in C:\Users\aaron.granado\Desktop\EjercicioDia17\Loteria-Project)
+2026-05-04 16:50:12 [main] DEBUG c.softtek.loteria.LoteriaApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-04 16:50:12 [main] DEBUG c.softtek.loteria.LoteriaApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-05-04 16:50:12 [main] INFO  c.softtek.loteria.LoteriaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-04 16:50:12 [main] INFO  c.softtek.loteria.LoteriaApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-04 16:50:14 [main] INFO  c.softtek.loteria.LoteriaApplication - Started LoteriaApplication in 2.402 seconds (process running for 2.801)
+2026-05-04 16:50:14 [main] INFO  c.softtek.loteria.LoteriaApplication - Started LoteriaApplication in 2.402 seconds (process running for 2.801)
+2026-05-04 16:50:34 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('n' (code 110)): was expecting double-quote to start property name]
+2026-05-04 16:50:57 [http-nio-8080-exec-3] INFO  c.s.l.services.user.UserServiceImpl - Usuario creado
+2026-05-04 16:50:57 [http-nio-8080-exec-3] INFO  c.s.l.services.user.UserServiceImpl - Usuario creado
+2026-05-04 16:50:57 [http-nio-8080-exec-3] DEBUG c.s.l.services.user.UserServiceImpl - Usuario creado: User(dni=51014122F, name=Aaron, bets=[])
+2026-05-04 16:50:57 [http-nio-8080-exec-3] DEBUG c.s.l.services.user.UserServiceImpl - Usuario creado: User(dni=51014122F, name=Aaron, bets=[])
+2026-05-04 16:51:05 [http-nio-8080-exec-2] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios
+2026-05-04 16:51:05 [http-nio-8080-exec-2] INFO  c.s.l.services.user.UserServiceImpl - Obteniendo lista de usuarios

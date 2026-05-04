@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
-    private String id;
+    private String dni;
     private String name;
     private List<List<Integer>> bets = new ArrayList<>();
 }

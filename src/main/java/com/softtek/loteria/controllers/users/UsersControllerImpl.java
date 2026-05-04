@@ -1,6 +1,5 @@
 package com.softtek.loteria.controllers.users;
 
-import com.softtek.loteria.model.Bet;
 import com.softtek.loteria.model.User;
 import com.softtek.loteria.services.user.UserService;
 import org.springframework.http.HttpStatus;
@@ -8,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,22 +26,21 @@ public class UsersControllerImpl implements UsersController {
     public ResponseEntity<Void> registerUser(@PathVariable String dni, @RequestBody String name) {
         Optional<User> registerUser = Optional.ofNullable(userService.createUser(dni, name));
 
-        if (registerUser.isEmpty()) {
-            userService.createUser(dni, name);
+        if (registerUser.isPresent()) {
             return ResponseEntity.
-                    created(). //TODO Cambiar ruta
-                            build();
+                    created(URI.create("/loteria/users/" + dni)).
+                    build();
         } else {
             return ResponseEntity.
                     noContent().
-                    header().   //TODO Cambiar ruta
-                            build();
+                    header("Content-Location", "/loteria/users/" + dni).
+                    build();
         }
     }
 
     @Override
     @GetMapping("/{dni}")
-    public User getUserByDni(String dni) {
+    public User getUserByDni(@PathVariable String dni) {
         Optional<User> user = Optional.ofNullable(userService.getUserById(dni));
 
         if (user.isEmpty()) {

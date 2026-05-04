@@ -1,7 +1,6 @@
 package com.softtek.loteria.controllers.bets;
 
 import com.softtek.loteria.services.bet.BetService;
-import com.softtek.loteria.services.user.UserService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
